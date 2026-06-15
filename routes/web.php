@@ -100,9 +100,12 @@ Route::get('/nilaikuliah/tambah', [nilaiKuliahController::class, 'tambahnilaikul
 Route::post('/nilaikuliah/store', [nilaiKuliahController::class, 'store']);
 
 //Route CRUD nilaiPeserta
-Route::get('/eas', [nilaiPesertaController::class, 'index']);
-Route::get('/eas/', [nilaiPesertaController::class, 'index']);
-Route::get('/eas', [nilaiPesertaController::class, 'index']);
+use App\Http\Controllers\NilaiPesertaController;
+
+// Halaman utama menampilkan tabel
+Route::get('/eas', [NilaiPesertaController::class, 'index']);
+Route::get('/eas/tambah', [NilaiPesertaController::class, 'create']);
+Route::post('/eas/store', [NilaiPesertaController::class, 'store']);
 
 
 

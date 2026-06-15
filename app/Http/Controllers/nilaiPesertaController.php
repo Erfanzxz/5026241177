@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 use App\Models\nilaiPeserta;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 class nilaiPesertaController extends Controller
 {
     public function index(){
         $nilaiPeserta = nilaiPeserta::orderby('id', 'asc')->get();
         return view('nilaiPeserta', compact('nilaiPeserta'));
+    }
+
+    public function create()
+    {
+        return view('createNilaiPeserta');
     }
 
     public function store(Request $request)
